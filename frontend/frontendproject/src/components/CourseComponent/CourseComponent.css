@@ -1,0 +1,10 @@
+.course-component-container {
+  background-color: gainsboro;
+  padding: 0 20px;
+  margin: 20px;
+  width: 25%;
+}
+
+.course-name {
+  font-size: medium;
+}

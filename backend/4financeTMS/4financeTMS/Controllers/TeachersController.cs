@@ -34,7 +34,7 @@ namespace _4financeTMS.Controllers
                 var teacherDto = new Dtos.TeacherDto()
 
                 {
-                    TeacherId = teacher.Id,
+                    Id = teacher.Id,
                     Name = teacher.Name,
                     Email = teacher.Email,
                     Speciality = teacher.Speciality,
@@ -59,7 +59,7 @@ namespace _4financeTMS.Controllers
             // mapping
             var teacherDto = new Dtos.TeacherDto()
             {
-                TeacherId = teacher.Id,
+                Id = teacher.Id,
                 Name = teacher.Name,
                 Email = teacher.Email,
                 Speciality = teacher.Speciality,
@@ -79,13 +79,13 @@ namespace _4financeTMS.Controllers
         teacher = await teacherRepository.CreateTeacherAsync(teacher);
             var teacherDto = new Dtos.TeacherDto
             {
-                TeacherId = teacher.Id,
+                Id = teacher.Id,
                 Name = teacher.Name,
                 Email = teacher.Email,
                 Speciality = teacher.Speciality
             };
 
-            return CreatedAtAction(nameof(GetTeacherAsync), new { id = teacherDto.TeacherId }, teacherDto);
+            return CreatedAtAction(nameof(GetTeacherAsync), new { id = teacherDto.Id }, teacherDto);
 
         }
 
@@ -100,6 +100,7 @@ namespace _4financeTMS.Controllers
             }
             var teacherDto = new Dtos.TeacherDto
             {
+                Id = teacher.Id,
                 Name = teacher.Name,
                 Email = teacher.Email,
                 Speciality = teacher.Speciality
@@ -132,7 +133,7 @@ namespace _4financeTMS.Controllers
             //convert from model back to doto 
             var teacherDto = new Dtos.TeacherDto
             {
-                TeacherId = teacher.Id,
+                Id = teacher.Id,
                 Name = teacher.Name,
                 Speciality = teacher.Speciality,
             };

@@ -1,0 +1,38 @@
+.top-section-image {
+  width: 100%;
+}
+
+.top-section-text {
+  font-size: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ef7367;
+}
+
+.home-page-content {
+  padding: 0 10%;
+}
+
+.about-us-section-text {
+  font-size: 22px;
+}
+
+.courses-section {
+  background-color: #ef7367;
+}
+.courses-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-us-social-media-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-media-icon {
+  width: 60px;
+  margin: 10px;
+}

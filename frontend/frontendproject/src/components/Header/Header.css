@@ -1,0 +1,25 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.header-logo {
+  height: 120px;
+}
+
+.menu-ul {
+  padding: 10px;
+  display: flex;
+}
+
+.menu-item {
+  list-style: none;
+  padding: 30px;
+  font-size: 22px;
+}
+
+.menu-item:hover {
+  color: crimson;
+}
