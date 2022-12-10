@@ -34,6 +34,8 @@ function TeacherPopup(props: TeacherPopupProps) {
     specialty: " ",
   });
 
+  const [isSaveButtonDisabled, setSaveButtonDisabled] = useState(false);
+
   const getTeacherById = () => {
     return teachers.filter((teacher: any, index: number) => {
       if (teacher.id == props.id) {
@@ -59,6 +61,32 @@ function TeacherPopup(props: TeacherPopupProps) {
     let value = event.target.value;
     setTeacher({ ...teacher, specialty: value });
   };
+
+  const validator = () => {
+    if (
+      teacher.name === "" ||
+      teacher.email === "" ||
+      teacher.specialty === ""
+    ) {
+      setSaveButtonDisabled(true);
+    } else if (!ValidateEmail(teacher.email)) {
+      setSaveButtonDisabled(true);
+    } else {
+      setSaveButtonDisabled(false);
+    }
+  };
+
+  function ValidateEmail(mail: string) {
+    if (/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(mail)) {
+      return true;
+    }
+    return false;
+  }
+
+  useEffect(() => {
+    validator();
+  }, [teacher]);
+
   const handleOnSubmit = () => {
     props.id
       ? dispatch(
@@ -129,6 +157,7 @@ function TeacherPopup(props: TeacherPopupProps) {
               color="primary"
               variant="contained"
               type="submit"
+              disabled={isSaveButtonDisabled}
               onClick={handleOnSubmit}
             >
               save

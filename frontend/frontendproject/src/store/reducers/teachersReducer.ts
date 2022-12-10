@@ -27,7 +27,7 @@ const TeachersReducer = (state = initialState, action: any) => {
           array[index] = payload;
         }
       });
-
+      return array;
     default:
       return state;
   }
